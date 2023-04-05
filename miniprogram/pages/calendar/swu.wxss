@@ -36,8 +36,8 @@
 .query-click{
   display: flex;  
   position: relative;
-  width: 40rpx;
-  height: 40rpx;
+  width: 65rpx;
+  height: 65rpx;
   left: -90rpx;
   /* top: 0.5rpx; */
   /* background-size:cover; */
