@@ -1,3 +1,4 @@
+
 /* 查询事件 */
 .events-query-box {
   position: relative;
@@ -13,18 +14,19 @@
 .event-input {
   font-size: 28rpx;
   padding-left: 20rpx;
-  padding-right: 110rpx;
+  padding-right: 80rpx;
   padding-top: 1rpx;
   padding-bottom: 1rpx;
   border-radius: 15rpx;
-  border: solid 5rpx #918f8f;
+  background-color: #4a4a4a;
+  color: #D5D7D7;
 }
 
 .query-icon{
   display: flex;  
   position: relative;
-  width: 42rpx;
-  height: 42rpx;
+  width: 30rpx;
+  height: 35rpx;
   left: -55rpx;
   /* top: 0.5rpx; */
   background-size:cover;
@@ -127,12 +129,12 @@
   border-radius: 50%; /*圆角*/
   text-align: center;
   color: #fff;
-  background-color: #00c8be;
+  background-color: #659CD1;
   margin: 0 auto;
 }
 
 .nowDay .date-head:hover {
-  background: linear-gradient(to bottom right, #009899, #19d6cb);
+  background: linear-gradient(to bottom right, #009899, #659CD1);
 }
 
 .section {

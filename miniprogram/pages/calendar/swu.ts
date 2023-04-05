@@ -20,6 +20,17 @@ Page({
         });
     }
     console.log(find_events) 
+    if (find_events.length==0)
+      wx.showModal({
+        title: "未找到相关日程",
+        icon: "none"
+      });
+    else
+      wx.showModal({
+        title: "为您找到${find_events.length}条相关日程",
+        content: find_events.map(e =>`日期：${e.date}\n事件：${e.event}`).join('\n\n'),
+        showCancel: false
+      });
   },
 
 

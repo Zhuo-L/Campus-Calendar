@@ -11,8 +11,7 @@
 
 <!-- 定义事件查询方法 -->
 <view class="events-query-box">
-  <input class="event-input" placeholder="请输入查询日程" bindinput="EventsInput_publish"></input>
-  <!-- <button class="btn" bindtap="Query_process" type="primary" size="mini"> <image> </button> -->
+  <input class="event-input" placeholder="查询日程" placeholder-style="color: #BFC3C3;" bindinput="EventsInput_publish"></input>
   <view class="query-icon" style="background-image: url('../../images/query.png')" bindtap="Query_process"></view>
 </view>
 <!-- 查询图标作为查询按钮 -->
