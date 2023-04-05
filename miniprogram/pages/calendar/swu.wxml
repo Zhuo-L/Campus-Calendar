@@ -1,3 +1,4 @@
+
 <!-- 日历 -->
 <view class="section">
   <view class="section__title">请选择学期</view>
@@ -7,6 +8,15 @@
     </view>
   </picker>
 </view>
+
+<!-- 定义事件查询方法 -->
+<view class="events-query-box">
+  <input class="event-input" placeholder="请输入查询日程" bindinput="EventsInput_publish"></input>
+  <!-- <button class="btn" bindtap="Query_process" type="primary" size="mini"> <image> </button> -->
+  <view class="query-icon" style="background-image: url('../../images/query.png')" bindtap="Query_process"></view>
+</view>
+<!-- 查询图标作为查询按钮 -->
+
 <view class="myReport-calendar">            
             <view class="calendar">
                 <view class="selectDate">
@@ -14,13 +24,17 @@
                         {{year}}年{{month}}月
                     </view>
                 </view> 
+
                 <view class="week">
                     <block wx:for="{{weekArr}}" wx:for-index="index" wx:for-item="item" wx:key="key">
                         <view>{{item}}</view>
                     </block>
                 </view> 
+
                 <view class="date-box"> 
+                    <!-- 点击显示事件 -->
                     <view wx:for="{{dateArr}}" wx:key="key" data-id="{{item.eventdetail}}" bindtap="bind_publish">
+
                         <view class='{{theDay == item.isToday ? "nowDay" : ""}}'>
                             <view class="date-head" >
                                 <view>{{item.dateNum}}<text>{{item.event}}</text></view>
@@ -35,3 +49,7 @@
 <button class="btn" bindtap="todayClick" type="primary" size="mini"> 今天 </button>
 <button class="btn" bindtap="nextMonthClick" type="primary" size="mini"> 下月 </button>
 </view>
+
+
+
+
