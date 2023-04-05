@@ -15,7 +15,7 @@ Page({
     let find_events = '';
     console.log(obj.length);
     for(let i = 0; i < obj.length; i++){
-      if(obj[i][1].includes(words))
+      if(obj[i][0].includes(words)||obj[i][1].includes(words))
         find_events  += '日期：' + obj[i][0].substr(0,4) + '-' + obj[i][0].substr(4,2) + '-' + obj[i][0].substr(6,2) + '  日程：' + obj[i][1]+ '\n';
     }
     

@@ -7,7 +7,7 @@
   margin: 40rpx 20rpx;
   padding-right: 50rpx;
   /* width: 700rpx; */
-  width:70%;
+  width:60%;
   align-items: center;
 }
 
@@ -26,13 +26,25 @@
 .query-icon{
   display: flex;  
   position: relative;
-  width: 35rpx;
-  height: 35rpx;
+  width: 40rpx;
+  height: 40rpx;
   left: -50rpx;
   /* top: 0.5rpx; */
-  background-size:cover;
+  /* background-size:cover; */
   /* border-radius: 15rpx; */
 }
+.query-click{
+  display: flex;  
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+  left: -90rpx;
+  /* top: 0.5rpx; */
+  /* background-size:cover; */
+  /* border-radius: 15rpx; */
+}
+
+
 
 /* 日历 */
 .myReport-calendar {
