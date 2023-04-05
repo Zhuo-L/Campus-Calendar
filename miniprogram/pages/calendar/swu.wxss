@@ -18,20 +18,20 @@
   padding-top: 1rpx;
   padding-bottom: 1rpx;
   border-radius: 15rpx;
-  background-color: #4a4a4a;
-  color: #D5D7D7;
+  background-color: #f3f1f1;
+  border: solid 1rpx #d2d2d2;
+  color: #61656A;
 }
 
 .query-icon{
   display: flex;  
   position: relative;
-  width: 30rpx;
+  width: 35rpx;
   height: 35rpx;
-  left: -55rpx;
+  left: -50rpx;
   /* top: 0.5rpx; */
   background-size:cover;
-  /* background-color: #cccccc; */
-  border-radius: 15rpx;
+  /* border-radius: 15rpx; */
 }
 
 /* 日历 */

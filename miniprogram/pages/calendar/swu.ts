@@ -11,16 +11,15 @@ Page({
     let dateArr1 = this.data.dateArr; //已计算好的数据
     let words = this.data.input_text;
     // console.log(words)
-    let find_events = []
-    for(let i = 0; i < this.data.eventsArray.length; i++){
-      if(this.data.eventsArray[i][1].includes(words))
-        find_events.push({
-          date: this.data.eventsArray[i][0],
-          event: this.data.eventsArray[i][1]
-        });
+    let obj = this.data.eventsArray;
+    let find_events = '';
+    console.log(obj.length);
+    for(let i = 0; i < obj.length; i++){
+      if(obj[i][1].includes(words))
+        find_events  += '日期：' + obj[i][0].substr(0,4) + '-' + obj[i][0].substr(4,2) + '-' + obj[i][0].substr(6,2) + '  日程：' + obj[i][1]+ '\n';
     }
-    // console.log(find_events) 
     
+
     if (find_events.length==0)
       wx.showModal({
         title: "未找到相关日程",
@@ -29,8 +28,9 @@ Page({
       });
     else
       wx.showModal({
-        title: `为您找到 ${find_events.length} 条日程`,
-        content: find_events.map(e =>`日期：${e.date}\n\n事件：${e.event}`).join('\n\n'),
+        title: `为您找到相关日程：`,
+        // content: find_events.map(e =>`日期：${e.date}\n\n事件：${e.event}`).join('\n\n'),
+        content: find_events,
         showCancel: false
       });
   },
