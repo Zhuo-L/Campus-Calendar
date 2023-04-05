@@ -167,5 +167,7 @@
 
 .btn{
   margin-top: 6px;
+  background-color: #659CD1;
+  color: #FFFFFF;
 }
 

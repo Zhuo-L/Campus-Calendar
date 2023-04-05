@@ -10,7 +10,7 @@ Page({
   Query_process: function(){
     let dateArr1 = this.data.dateArr; //已计算好的数据
     let words = this.data.input_text;
-    console.log(words)
+    // console.log(words)
     let find_events = []
     for(let i = 0; i < this.data.eventsArray.length; i++){
       if(this.data.eventsArray[i][1].includes(words))
@@ -19,16 +19,18 @@ Page({
           event: this.data.eventsArray[i][1]
         });
     }
-    console.log(find_events) 
+    // console.log(find_events) 
+    
     if (find_events.length==0)
       wx.showModal({
         title: "未找到相关日程",
-        icon: "none"
+        icon: "none",
+        showCancel: false
       });
     else
       wx.showModal({
-        title: "为您找到${find_events.length}条相关日程",
-        content: find_events.map(e =>`日期：${e.date}\n事件：${e.event}`).join('\n\n'),
+        title: `为您找到 ${find_events.length} 条日程`,
+        content: find_events.map(e =>`日期：${e.date}\n\n事件：${e.event}`).join('\n\n'),
         showCancel: false
       });
   },
@@ -274,7 +276,7 @@ bind_publish:function(e){    //点击某个具体的元素，获取到他在数�
     console.log(e.currentTarget.dataset.id);  
 	if(e.currentTarget.dataset.id.length>0)
 		wx.showModal({
-		  title: '今日日程',
+		  title: '该日日程',
 		  content: e.currentTarget.dataset.id,
 		  success: function (res) {
 			if (res.confirm) { //这里是点击了确定以后
