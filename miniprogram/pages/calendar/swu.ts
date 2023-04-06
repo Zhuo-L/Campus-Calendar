@@ -8,7 +8,6 @@ Page({
   },
   //遍历事件以显示匹配的日期和时间
   Query_process: function(){
-    let dateArr1 = this.data.dateArr; //已计算好的数据
     let words = this.data.input_text;
     // console.log(words)
     let obj = this.data.eventsArray;
@@ -19,8 +18,12 @@ Page({
         find_events  += '日期：' + obj[i][0].substr(0,4) + '-' + obj[i][0].substr(4,2) + '-' + obj[i][0].substr(6,2) + '  日程：' + obj[i][1]+ '\n';
     }
     
-
-    if (find_events.length==0)
+    if (words=="")
+      wx.showToast({
+        title: "请输入查询",
+        icon: "none"
+      });
+    else if (find_events.length==0)
       wx.showModal({
         title: "未找到相关日程",
         icon: "none",

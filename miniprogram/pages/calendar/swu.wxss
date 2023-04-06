@@ -19,15 +19,15 @@
   padding-bottom: 1rpx;
   border-radius: 15rpx;
   background-color: #f3f1f1;
-  border: solid 1rpx #d2d2d2;
+  border: solid 3rpx #bebebe;
   color: #61656A;
 }
 
 .query-icon{
   display: flex;  
   position: relative;
-  width: 40rpx;
-  height: 40rpx;
+  width: 35rpx;
+  height: 30rpx;
   left: -50rpx;
   /* top: 0.5rpx; */
   /* background-size:cover; */
