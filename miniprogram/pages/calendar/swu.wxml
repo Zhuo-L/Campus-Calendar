@@ -11,9 +11,10 @@
 
 <!-- 定义事件查询方法 -->
 <view class="events-query-box">
-  <input class="event-input" type="text" placeholder="查询日程" placeholder-style="color: #BFC3C3;" bindinput="EventsInput_publish" ></input>
+  <input class="event-input" type="text" placeholder="查询日程" placeholder-style="color: #BFC3C3;" bindconfirm="Enter_query" bindinput="EventsInput_publish" ></input>
   <image class="query-icon" src="../../images/query.png"> </image>
   <view class="query-click" bindtap="Query_process"></view>
+  <!-- <icon class="clear-icon" wx:if="{{clearShow}}" type="clear" bindtap='clear'/> -->
 </view>
 <!-- 查询图标作为查询按钮 -->
 

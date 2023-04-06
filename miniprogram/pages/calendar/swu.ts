@@ -1,14 +1,26 @@
 let jsonData = require('../../data/event.js');
 Page({ 
+  data_input: {
+    input_text: ''
+  },
   //提取输入的词句
   EventsInput_publish: function(e){
     this.setData({
       input_text:e.detail.value
     });
   },
+  //监听回车
+  Enter_query: function(e){
+    console.log("回车操作");
+    this.setData({
+      input_text: e.detail.value
+    });
+    this.Query_process();
+  },
   //遍历事件以显示匹配的日期和时间
   Query_process: function(){
     let words = this.data.input_text;
+    // this.data.input_text = "";
     console.log("输入为："+words)
     let obj = this.data.eventsArray;
     let find_events = "";
@@ -41,7 +53,7 @@ Page({
       });
     }
   },
-
+  
 
   /*页面的初始数据*/
   data: {
