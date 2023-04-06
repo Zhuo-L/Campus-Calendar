@@ -9,33 +9,37 @@ Page({
   //遍历事件以显示匹配的日期和时间
   Query_process: function(){
     let words = this.data.input_text;
-    // console.log(words)
+    console.log("输入为："+words)
     let obj = this.data.eventsArray;
-    let find_events = '';
-    console.log(obj.length);
+    let find_events = "";
+    // console.log(obj.length);
     for(let i = 0; i < obj.length; i++){
-      if(obj[i][0].includes(words)||obj[i][1].includes(words))
+      if((obj[i][0].includes(words)||obj[i][1].includes(words))&&words!="")
         find_events  += '日期：' + obj[i][0].substr(0,4) + '-' + obj[i][0].substr(4,2) + '-' + obj[i][0].substr(6,2) + '  日程：' + obj[i][1]+ '\n';
     }
     
-    if (words=="")
+    if (typeof(words) == "undefined"||words==""){
+      // console.log("查询到的事件："+find_events);
       wx.showToast({
         title: "请输入查询",
         icon: "none"
       });
-    else if (find_events.length==0)
+    }
+    else if (find_events.length==0){
       wx.showModal({
         title: "未找到相关日程",
         icon: "none",
         showCancel: false
       });
-    else
+    }
+    else{
       wx.showModal({
         title: `为您找到相关日程：`,
         // content: find_events.map(e =>`日期：${e.date}\n\n事件：${e.event}`).join('\n\n'),
         content: find_events,
         showCancel: false
       });
+    }
   },
 
 
